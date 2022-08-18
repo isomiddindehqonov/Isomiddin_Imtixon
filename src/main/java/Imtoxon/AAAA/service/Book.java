@@ -10,4 +10,5 @@ public interface Book {
     ResponseDto getById(Integer id,int page,int size);
     ResponseDto deleteBook(Integer id);
     ResponseDto updateBook(BookDto bookDto);
+    ResponseDto getAll();
 }

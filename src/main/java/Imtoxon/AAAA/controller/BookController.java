@@ -17,7 +17,7 @@ public class BookController {
     public ResponseDto getByIdBook(@PathVariable Integer id,@PathVariable int page, @PathVariable int size){
         return book.getById(id,page,size);
     }
-    @DeleteMapping
+    @DeleteMapping("{/id}")
     public ResponseDto deleteByIdBook(@PathVariable Integer id){
         return book.deleteBook(id);
     }
@@ -28,6 +28,10 @@ public class BookController {
     @PutMapping
     public ResponseDto uppdateBook(@RequestBody BookDto bookDto){
         return book.updateBook(bookDto);
+    }
+    @GetMapping
+    public ResponseDto getAll(){
+        return book.getAll();
     }
 
 }

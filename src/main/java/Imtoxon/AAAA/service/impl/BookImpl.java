@@ -9,7 +9,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -76,6 +78,12 @@ public class BookImpl implements Book {
                 .code(-1)
                 .massage("Null")
                 .build();
+
+    }
+    public ResponseDto getAll(){
+        List<BookEntity> books =bookRepository.findAll();
+        return (ResponseDto) books.stream().map(s-> BookMepper.toDto(s)).collect(Collectors.toList());
+
 
     }
 }
