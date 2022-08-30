@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class BookController {
     private final BookImpl book;
-    @GetMapping("{/id}")
+    @GetMapping("/{id}/{page}/{size}")
     public ResponseDto getByIdBook(@PathVariable Integer id,@PathVariable int page, @PathVariable int size){
         return book.getById(id,page,size);
     }
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public ResponseDto deleteByIdBook(@PathVariable Integer id){
         return book.deleteBook(id);
     }
