@@ -1,12 +1,10 @@
 package Imtoxon.AAAA.controller;
-
 import Imtoxon.AAAA.dto.BookDto;
 import Imtoxon.AAAA.dto.ResponseDto;
 import Imtoxon.AAAA.service.impl.BookImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 @Controller
 @RequestMapping("/book")
 @RestController
